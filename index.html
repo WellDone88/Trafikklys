@@ -28,14 +28,11 @@
         .turnOnGreen {
             background-color: green;
         }
-
-       .lightOff {
-            background-color: black;
-        }
-
+        
         .backToOrangeStyle {
             background-color: orange;
         }
+        
         .backToRedStyle {
             background-color: red;
         }
@@ -80,22 +77,22 @@
 
             document.getElementById('redlight').classList.add('turnOnRed') +
             document.getElementById('orangelight').classList.add('turnOnOrange') &&
-            document.getElementById('redlight').classList.add('lightOff');
+            document.getElementById('redlight').classList.remove('turnOnRed');
         }
 
         function orange() {
             document.getElementById('orangelight').classList.add('turnOnOrange') +
-            document.getElementById('redlight').classList.add('lightOff');
+            document.getElementById('redlight').classList.remove('turnOnRed');
             }
             
         function green() {
             document.getElementById('greenlight').classList.add('turnOnGreen') +
-            document.getElementById('orangelight').classList.add('lightOff');
+            document.getElementById('orangelight').classList.remove('turnOnOrange');
 
         }
 
         function BackToOrange() {
-            document.getElementById('greenlight').classList.add('lightOff') +
+            document.getElementById('greenlight').classList.remove('turnOnGreen') +
             document.getElementById('orangelight').classList.add('backToOrangeStyle')
            
 
