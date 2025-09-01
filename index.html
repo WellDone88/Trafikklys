@@ -32,7 +32,7 @@
         .backToOrangeStyle {
             background-color: orange;
         }
-        
+
         .backToRedStyle {
             background-color: red;
         }
@@ -101,7 +101,11 @@
         function BacktoRed() {
             
             document.getElementById('orangelight').classList.remove('backToOrangeStyle') + 
-            document.getElementById('redlight').classList.add('backToRedStyle');
+            document.getElementById('redlight').classList.add('backToRedStyle')
+        }
+
+        function TurnOffLights() {
+            document.getElementById('redlight').classList.remove('backToRedStyle')
         }
 
        
@@ -110,9 +114,10 @@
              setTimeout(red,1000);
              setTimeout(redOrange,3000);
              setTimeout(orange,4000);
-             setTimeout(green,5000)
-             setTimeout(BackToOrange,8000)
-             setTimeout(BacktoRed,9000)
+             setTimeout(green,5000);
+             setTimeout(BackToOrange,8000);
+             setTimeout(BacktoRed,9000);
+             setTimeout(TurnOffLights,11000);
 
 
              
