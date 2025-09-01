@@ -33,6 +33,13 @@
             background-color: black;
         }
 
+        .backToOrangeStyle {
+            background-color: orange;
+        }
+        .backToRedStyle {
+            background-color: red;
+        }
+
         #AllTheDivs {
             position: fixed;
             top: 32px;
@@ -63,47 +70,56 @@
     <script>
 
         function red() {
-            document.getElementById('redlight').classList.toggle('turnOnRed');
+            document.getElementById('redlight').classList.add('turnOnRed');
         }
 
         function redOrange() {
-            document.getElementById('redlight').classList.toggle('turnOnRed') + 
-            document.getElementById('orangelight').classList.toggle('turnOnOrange')
+
+            document.getElementById('redlight').classList.add('turnOnRed') +
+            document.getElementById('orangelight').classList.add('turnOnOrange') &&
+            document.getElementById('redlight').classList.add('lightOff');
         }
 
         function orange() {
-            document.getElementById('orangelight').classList.toggle('turnOnOrange');
+            document.getElementById('orangelight').classList.add('turnOnOrange') +
+            document.getElementById('redlight').classList.add('lightOff');
             }
             
         function green() {
-            document.getElementById('greenlight').classList.toggle('turnOnGreen');
-
-        }
-
-        function turnOffaLightRED() {
-            document.getElementById('redlight').classList.add('lightOff');
-
-            }
-
-        function turnOffaLightORANGE() {
+            document.getElementById('greenlight').classList.add('turnOnGreen') +
             document.getElementById('orangelight').classList.add('lightOff');
 
-            }
+        }
 
-        function turnOffaLightGREEN() {
-            document.getElementById('greenlight').classList.add('lightOff');
-
-            }
-
-        function autoChange() {
-             let auto = setTimeout(red,1000);
-             auto = setTimeout(orange,3000);
-             auto = setTimeout(turnOffaLightRED,4000);
-             auto = setTimeout(green,5000);
-             auto = setTimeout(turnOffaLightORANGE,5000)
-             auto = setTimeout(turnOffaLightGREEN,6000)
+        function BackToOrange() {
+            document.getElementById('greenlight').classList.add('lightOff') +
+            document.getElementById('orangelight').classList.add('backToOrangeStyle')
+           
 
         }
+
+        function BacktoRed() {
+            
+            document.getElementById('orangelight').classList.remove('backToOrangeStyle') + 
+            document.getElementById('redlight').classList.add('backToRedStyle');
+        }
+
+       
+
+        function autoChange() {
+             setTimeout(red,1000);
+             setTimeout(redOrange,3000);
+             setTimeout(orange,4000);
+             setTimeout(green,5000)
+             setTimeout(BackToOrange,8000)
+             setTimeout(BacktoRed,9000)
+
+
+             
+
+
+        }
+
     </script>
     
 </body>
