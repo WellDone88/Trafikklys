@@ -9,25 +9,59 @@
             width: 400px;
             height: 600px;
         }
+
+        .turnOnRed {
+            background-color: red;
+        }
+        .turnOnOrange {
+            background-color: orange;
+        }
+
+        .turnOnGreen {
+            background-color: green;
+        }
+
+       .lightForm {
+            width: 75px;
+            height: 75px;
+            border: solid black 1px;
+            border-radius: 50%;
+        }
+
     </style>
 </head>
 <body>
+
+    <div id="redlight" class="lightForm"></div>
+    <div id="orangelight" class="lightForm"></div>
+    <div id="greenlight" class="lightForm"></div>
 
     <div>
         <img src="traffiklys.png" alt="traffiklys png" class="lights">
     </div>
 
-    <div></div>
-    <div></div>
-    <div></div>
-
-    <button>Rød</button>
-    <button>Rød-Orange</button>
-    <button>Orange</button>
-    <button>Grønn</button>
+    <button onclick="red()">Rød</button>
+    <button onclick="redOrange()">Rød-Orange</button>
+    <button onclick="orange()">Orange</button>
+    <button onclick="green()">Grønn</button>
 
 
     <script>
+        function red() {
+            document.getElementById('redlight').classList.add('turnOnRed');
+        }
+        function redOrange() {
+            document.getElementById('redlight').classList.add('turnOnRed');
+            document.getElementById('orangelight').classList.add('turnOnOrange');
+        }
+        function orange() {
+            document.getElementById('orangelight').classList.add('turnOnOrange');
+
+        }
+        function green() {
+            document.getElementById('greenlight').classList.add('turnOnGreen');
+
+        }
 
     </script>
     
