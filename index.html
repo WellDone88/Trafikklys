@@ -6,13 +6,13 @@
     <title>Document</title>
     <style>
         .lights {
-            width: 400px;
+            width: 402px;
             height: 600px;
         }
 
         .lightForm {
             background-color: black;
-            width: 75px;
+            width: 90px;
             height: 75px;
             border: solid black 1px;
             border-radius: 50%;
@@ -33,13 +33,20 @@
             background-color: black;
         }
 
+        #AllTheDivs {
+            position: fixed;
+            top: 32px;
+            left: 164px;
+        }
+
     </style>
 </head>
 <body>
-
-    <div id="redlight" class="lightForm"></div>
-    <div id="orangelight" class="lightForm"></div>
-    <div id="greenlight" class="lightForm"></div>
+    <div id="AllTheDivs">
+        <div id="redlight" class="lightForm"></div>
+        <div id="orangelight" class="lightForm"></div>
+        <div id="greenlight" class="lightForm"></div>
+    </div>
 
     <div>
         <img src="traffiklys.png" alt="traffiklys png" class="lights">
@@ -50,10 +57,10 @@
     <button onclick="orange()">Orange</button>
     <button onclick="green()">Grønn</button>
 
+    <button onclick="autoChange()">auto</button>
+
 
     <script>
-
-        autoChange()
 
         function autoChange() {
              let auto = setTimeout(red,1000)
@@ -63,20 +70,20 @@
 
 
         function red() {
-            document.getElementById('redlight').classList.add('turnOnRed');
+            document.getElementById('redlight').classList.toggle('turnOnRed');
         }
 
         function redOrange() {
-            document.getElementById('Orangelight').classList.add('turnOnRed');
-            document.getElementById('Orangelight').classList.add('turnOnOrange');
+            document.getElementById('redlight').classList.toggle('turnOnRed') + 
+            document.getElementById('orangelight').classList.toggle('turnOnOrange')
         }
 
         function orange() {
-            document.getElementById('orangelight').classList.add('turnOnOrange');
+            document.getElementById('orangelight').classList.toggle('turnOnOrange');
             }
             
         function green() {
-            document.getElementById('greenlight').classList.add('turnOnGreen');
+            document.getElementById('greenlight').classList.toggle('turnOnGreen');
 
         }
 
@@ -96,13 +103,12 @@
             }
 
         function autoChange() {
-             let auto = setTimeout(red,2000);
-             auto =  setTimeout(orange,3000) + setTimeout(red,3000);
+             let auto = setTimeout(red,1000);
+             auto = setTimeout(orange,3000) + setTimeout(red,3000);
              auto = setTimeout(turnOffaLightRED,4000);
-             auto = setTimeout(green,5000);
-             auto = setTimeout(turnOffaLightORANGE,6000) + setTimeout(green,6000);
-             auto = setTimeout(turnOffaLightGREEN,7000);
-             auto = setTimeout(turnOffaLightGREEN,8000);
+             auto = setTimeout(green,4500);
+             auto = setTimeout(turnOffaLightORANGE,4500)
+             auto = setTimeout(turnOffaLightGREEN,5500);
         }
 
 
