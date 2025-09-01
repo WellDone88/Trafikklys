@@ -61,7 +61,7 @@
 
 
     <script>
-    
+
         function red() {
             document.getElementById('redlight').classList.toggle('turnOnRed');
         }
@@ -97,15 +97,14 @@
 
         function autoChange() {
              let auto = setTimeout(red,1000);
-             auto = setTimeout(orange,3000) + setTimeout(red,3000);
+             auto = setTimeout(orange,3000);
              auto = setTimeout(turnOffaLightRED,4000);
-             auto = setTimeout(green,4500);
-             auto = setTimeout(turnOffaLightORANGE,4500)
-             auto = setTimeout(turnOffaLightGREEN,5500);
+             auto = setTimeout(green,5000);
+             auto = setTimeout(turnOffaLightORANGE,5000)
+             auto = setTimeout(turnOffaLightGREEN,6000)
+
         }
-
-
     </script>
     
 </body>
-</html>
+</html
